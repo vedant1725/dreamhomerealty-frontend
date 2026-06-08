@@ -117,8 +117,8 @@ function RentPageContent() {
       }
 
       // 5. Preferences
-      if (petFriendly && !p.tags?.some(t => t.toLowerCase().includes("pet"))) return false;
-      if (family && !p.tags?.some(t => t.toLowerCase().includes("family"))) return false;
+      if (petFriendly && !p.tags?.some((t: string) => t.toLowerCase().includes("pet"))) return false;
+      if (family && !p.tags?.some((t: string) => t.toLowerCase().includes("family"))) return false;
 
       // 6. Amenities
       if (selectedAmenities.length > 0) {

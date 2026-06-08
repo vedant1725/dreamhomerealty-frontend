@@ -65,7 +65,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             <img src={property.images[0]} alt="Main" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
           </div>
-          {property.images.slice(1, 5).map((img, i) => (
+          {property.images.slice(1, 5).map((img: string, i: number) => (
             <div key={i} className="relative group cursor-pointer overflow-hidden hidden md:block">
               <img src={img} alt={`View ${i + 2}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               {i === 3 && (
@@ -171,7 +171,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             <div className="bg-white rounded-2xl p-6 shadow-[0_2px_20px_rgba(13,27,42,0.07)]">
               <h2 className="font-serif text-xl font-bold text-[#0D1B2A] mb-5">Premium Amenities</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {property.amenities.map((a) => (
+                {property.amenities.map((a: string) => (
                   <div key={a} className="flex items-center gap-2.5 text-sm text-[#0D1B2A] font-medium">
                     <CheckCircle2 size={16} className="text-[#B8860B] shrink-0" />
                     {a}
@@ -242,7 +242,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
               <div>
                 <h2 className="font-serif text-2xl font-bold text-[#0D1B2A] mb-5">Similar Properties in {property.city}</h2>
                 <div className="grid sm:grid-cols-2 gap-5">
-                  {similarProps.slice(0, 2).map(p => (
+                  {similarProps.slice(0, 2).map((p: any) => (
                     <div key={p.id} className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(13,27,42,0.07)] border border-[#F7F3E8] group">
                       <div className="h-44 overflow-hidden">
                         <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
